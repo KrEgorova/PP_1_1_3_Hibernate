@@ -8,6 +8,7 @@ public class Main {
 
     public static void main(String[] args) {
         UserServiceImpl userService = new UserServiceImpl();
+        userService.dropUsersTable();
         userService.createUsersTable();
         userService.saveUser("Postman", "Pechkin", (byte) 50);
         userService.saveUser("Dyadya", "Fedor", (byte) 15);
@@ -15,6 +16,6 @@ public class Main {
         userService.saveUser("Dog", "Sharik", (byte) 22);
         System.out.println(userService.getAllUsers().toString());
         userService.cleanUsersTable();
-        userService.dropUsersTable();
+//        userService.dropUsersTable();
  }
 }
