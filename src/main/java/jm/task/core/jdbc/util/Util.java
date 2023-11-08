@@ -67,7 +67,12 @@ public class Util {
         return sessionFactory;
     }
 
+
     public static void close() {
-        sessionFactory.close();
+        try {
+            sessionFactory.close();
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
     }
 }
